@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { proyectos } from "../data/proyecto.js";
+---
+
+<Layout title="Proyectos">
+  <section class="py-16 px-4 bg-base-300 text-base-content">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 text-center">Proyectos</h2>
+
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          proyectos.map((proyecto) => (
+            <div class="backdrop-blur-sm bg-base-200/60 border border-base-300 rounded-2xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between">
+              <div>
+                <img
+                  src={proyecto.imagen ?? "/placeholder.jpg"}
+                  alt={proyecto.titulo ?? "Proyecto"}
+                  class="rounded-xl mb-4 w-full h-40 object-cover"
+                />
+                <h3 class="text-xl font-semibold mb-2">{proyecto.titulo}</h3>
+                <p class="text-sm text-base-content/80 mb-4">
+                  {proyecto.descripcion}
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {Array.isArray(proyecto.tecnologias) &&
+                    proyecto.tecnologias.map((tec) => (
+                      <span class="badge badge-sm badge-outline" key={tec}>
+                        {tec}
+                      </span>
+                    ))}
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-auto pt-4 border-t border-base-300">
+                <a
+                  href={proyecto.demo}
+                  class="text-primary hover:underline text-sm font-medium"
+                  target="_blank"
+                >
+                  🌐 Ver demo
+                </a>
+                <a
+                  href={proyecto.codigo}
+                  class="text-sm hover:underline text-base-content/70"
+                  target="_blank"
+                >
+                  🧠 Ver código
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

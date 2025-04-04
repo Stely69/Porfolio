@@ -1,0 +1,8 @@
+---
+const { direccion,title2  } = Astro.props;
+---
+
+<div class="card bg-base-100 p-4 shadow">
+    <figure><img src={direccion} alt={title2} class="h-10 w-10 transition hover:invert dark:invert dark:hover:opacity-70" /></figure>
+    <p class="mt-2 font-medium">{title2}</p>
+</div>

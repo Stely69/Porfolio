@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Cards from '../components/Cards.astro';
 ---
+<Layout title="Inicio">
+    <section class="text-center py-20">
+        <h1 class="text-6xl font-extrabold mb-4">Hola, soy William Vanegas</h1>
+        <p class="text-xl mb-6">Desarrollador Web | Diseñador | Creador de soluciones digitales</p>
+        <div class="flex justify-center gap-4">
+          <a href="/proyectos" class="btn btn-primary">Ver mis proyectos</a>
+          <a href="/contacto" class="btn btn-outline btn-secondary">Contáctame</a>
+        </div>
+    </section>
+      
+    <section class="py-16 bg-base-300">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-bold mb-8">Lo que sé hacer</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <Cards direccion="/icons/html5.svg" title2="HTML" />
+            <Cards direccion="/icons/css.svg" title2="CSS" />
+            <Cards direccion="/icons/javascript.svg" title2="JavaScript" />
+            <Cards direccion="/icons/astro.svg" title2="Astro" />
+            <Cards direccion="/icons/tailwindcss.svg" title2="TailwindCSS" />
+            <Cards direccion="/icons/github.svg" title2="Git" />
+            <Cards direccion="/icons/daisyui.svg" title2="Daisyui" />
+            <Cards direccion="/icons/php.svg" title2="PHP" />
+          </div>
+        </div>
+    </section>
+      
 
-<Layout>
-	<Welcome />
+    <section class="bg-primary text-primary-content text-center py-10 glass">
+        <h2 class="text-3xl font-semibold mb-4">Trabajemos juntos.</h2>
+        <p class="mb-6 text-base-content text-opacity-80">Estoy abierto a nuevos proyectos o colaboraciones. ¿Te interesa algo en mente?</p>
+        <a class="btn btn-primary" href="/contacto">Contáctame</a>
+    </section>
+  
 </Layout>

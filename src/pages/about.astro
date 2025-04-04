@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Cards from "../components/Cards.astro";
+---
+
+<Layout title="Sobre mí">
+  <section class="py-25 px-4 bg-base-300 text-base-content">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+      
+      <!-- Imagen (opcional) -->
+      <div class="w-full md:w-1/3 flex justify-center">
+        <div class="avatar avatar-placeholder avatar-online">
+          <div class="bg-neutral text-neutral-content w-50 rounded-full">
+            <span class="text-3xl">W</span>
+          </div>
+        </div>
+
+      </div>
+  
+      <!-- Texto -->
+      <div class="w-full md:w-2/3">
+        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+        <p class="text-lg mb-4">
+          Soy <span class="font-semibold text-primary">William Steven Vanegas Gomez</span>, un desarrollador web enfocado en crear interfaces limpias, funcionales y bien estructuradas. Me apasiona la tecnología y siempre estoy aprendiendo cosas nuevas.
+        </p>
+        <p class="text-base text-opacity-80 mb-6">
+          Disfruto trabajar tanto en el frontend como en el backend, buscando siempre ofrecer una experiencia completa al usuario final.
+        </p>
+  
+        <!-- Habilidades blandas o técnicas destacadas -->
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base mb-8 justify-items-center md:justify-items-start">
+          <li class="badge badge-outline py-3 px-4 text-base">Comunicación</li>
+          <li class="badge badge-outline py-3 px-4 text-base">Trabajo en equipo</li>
+          <li class="badge badge-outline py-3 px-4 text-base">Resolución de problemas</li>
+          <li class="badge badge-outline py-3 px-4 text-base">JavaScript</li>
+          <li class="badge badge-outline py-3 px-4 text-base">Astro</li>
+          <li class="badge badge-outline py-3 px-4 text-base">TailwindCSS</li>
+        </ul>
+  
+        <!-- Botón de descarga de CV -->
+        <a class="btn btn-outline btn-primary" href="/cv.pdf" target="_blank">Descargar CV</a>
+      </div>
+    </div>
+  </section>
+  
+      
+</Layout>
