@@ -4,37 +4,36 @@ import Cards from "../components/Cards.astro";
 ---
 
 <Layout title="Sobre mí">
-  <section class="py-25 px-4 bg-base-300 text-base-content">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+  <section class="py-10 lg:py-56  px-4 bg-base-300 text-base-content min-h-screen flex flex-col justify-center items-center">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
       
       <!-- Imagen (opcional) -->
-      <div class="w-full md:w-1/3 flex justify-center">
+      <div class="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
         <div class="avatar avatar-placeholder avatar-online">
-          <div class="bg-neutral text-neutral-content w-50 rounded-full">
-            <span class="text-3xl">W</span>
+          <div class="bg-neutral text-neutral-content w-32 h-32 md:w-50 md:h-50 rounded-full flex items-center justify-center">
+            <span class="text-2xl md:text-3xl">W</span>
           </div>
         </div>
-
       </div>
   
       <!-- Texto -->
-      <div class="w-full md:w-2/3">
-        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
-        <p class="text-lg mb-4">
+      <div class="w-full md:w-2/3 text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Sobre mí</h2>
+        <p class="text-base md:text-lg mb-4">
           Soy <span class="font-semibold text-primary">William Steven Vanegas Gomez</span>, un desarrollador web enfocado en crear interfaces limpias, funcionales y bien estructuradas. Me apasiona la tecnología y siempre estoy aprendiendo cosas nuevas.
         </p>
-        <p class="text-base text-opacity-80 mb-6">
+        <p class="text-sm md:text-base text-opacity-80 mb-6">
           Disfruto trabajar tanto en el frontend como en el backend, buscando siempre ofrecer una experiencia completa al usuario final.
         </p>
   
         <!-- Habilidades blandas o técnicas destacadas -->
-        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base mb-8 justify-items-center md:justify-items-start">
-          <li class="badge badge-outline py-3 px-4 text-base">Comunicación</li>
-          <li class="badge badge-outline py-3 px-4 text-base">Trabajo en equipo</li>
-          <li class="badge badge-outline py-3 px-4 text-base">Resolución de problemas</li>
-          <li class="badge badge-outline py-3 px-4 text-base">JavaScript</li>
-          <li class="badge badge-outline py-3 px-4 text-base">Astro</li>
-          <li class="badge badge-outline py-3 px-4 text-base">TailwindCSS</li>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm md:text-base mb-8 justify-items-center md:justify-items-start">
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">Comunicación</li>
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">Trabajo en equipo</li>
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">Resolución de problemas</li>
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">JavaScript</li>
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">Astro</li>
+          <li class="badge badge-outline py-2 px-3 md:py-3 md:px-4 text-sm md:text-base">TailwindCSS</li>
         </ul>
   
         <!-- Botón de descarga de CV -->
