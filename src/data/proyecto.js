@@ -1,11 +1,11 @@
 export const proyectos = [
   {
-    titulo: "Landing Page Moderna",
-    descripcion: "Una página de aterrizaje responsive hecha con Astro y TailwindCSS.",
-    imagen: "/proyectos/landing.jpg",
-    tecnologias: ["Astro", "TailwindCSS", "HTML"],
-    demo: "https://ejemplo-landing.com",
-    codigo: "https://github.com/usuario/landing-page"
+    titulo: " Sistema de Gestión de Activos",
+    descripcion: "Una página web para gestionar activos de una empresa.",
+    imagen: "/images/GEDAC.png",
+    tecnologias: ["PHP", "TailwindCSS", "HTML"],
+    demo: "#",
+    codigo: "https://github.com/Stely69/mesa-de-ayuda"
   },
   {
     titulo: "Blog Estático",
