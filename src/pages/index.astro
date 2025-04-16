@@ -8,39 +8,39 @@ import logo from '../assets/images/JavaScript-logo.png';
   <section id="hero" class="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-base-100 text-base-content group">
     <!-- Texto Izquierda -->
     <div class="md:w-1/2 text-left pl-4 md:pl-12 lg:pl-20 mb-8 md:mb-0 flex flex-col justify-center items-start">
-      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
         Hola, soy William Vanegas
       </h1>
-      <p class="text-xl sm:text-2xl lg:text-3xl mb-12 text-base-content/70">
+      <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-base-content/70">
         Desarrollador Web | Diseñador | Creador de soluciones digitales | Desarrollador de software
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="/proyectos" class="btn btn-primary text-base px-6 py-4">Ver mis proyectos</a>
-        <a href="/contacto" class="btn btn-outline btn-secondary text-base px-6 py-4">Contáctame</a>
+        <a href="/proyectos" class="btn btn-primary text-base px-6 py-3">Ver mis proyectos</a>
+        <a href="/contacto" class="btn btn-outline btn-secondary text-base px-6 py-3">Contáctame</a>
       </div>
     </div>
     
     <!-- Logo JS Derecha con movimiento solo en sección -->
     <div class="md:w-1/2 flex justify-center items-center mt-12 md:mt-0 relative">
       <!-- Fondo difuso detrás del logo -->
-      <div class="absolute w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl z-0"></div>
+      <div class="absolute w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl z-0"></div>
   
       <!-- Contenedor del logo -->
       <div 
         id="jsLogoTilt"
-        class="rounded-xl shadow-xl overflow-hidden p-4 bg-transparent w-full max-w-[400px] md:max-w-[500px] h-full md:h-[500px] relative"
+        class="rounded-xl shadow-xl overflow-hidden p-4 bg-transparent w-full max-w-[350px] md:max-w-[400px] h-full md:h-[400px] relative"
         style="will-change: transform; perspective: 1000px;"
       >
         <Image 
           src={logo} 
           alt="JavaScript Logo"
-          width={300} 
-          height={300}
+          width={250} 
+          height={250}
           class="w-full h-full object-contain"
         />
       </div>
     </div>
-  </section>   
+  </section>     
   
   <section class="py-32 bg-base-200 text-base-content">
     <div class="max-w-6xl mx-auto px-4 text-center">
