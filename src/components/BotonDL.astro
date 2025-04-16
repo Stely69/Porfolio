@@ -1,3 +1,4 @@
+<!-- Botón flotante en la esquina -->
 <div class="fixed bottom-6 right-6 z-50">
   <label class="swap swap-rotate btn btn-circle btn-primary shadow-lg">
     <!-- Checkbox que alterna el tema -->
@@ -15,3 +16,35 @@
   </label>
 </div>
 
+<script>
+  // Detectar si el sistema prefiere modo oscuro
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const themeToggle = document.getElementById("themeToggle") as HTMLInputElement | null;
+
+  // Comprobar el estado almacenado en localStorage
+  const savedTheme = localStorage.getItem('theme');
+
+  // Establecer el tema inicial basado en el almacenamiento o la preferencia del sistema
+  if (savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme)) {
+    document.documentElement.classList.add("dark");
+    if (themeToggle) {
+      themeToggle.checked = true; // Marcar el checkbox si está en modo oscuro
+    }
+  } else {
+    document.documentElement.classList.remove("dark");
+    if (themeToggle) {
+      themeToggle.checked = false; // Desmarcar el checkbox si está en modo claro
+    }
+  }
+
+  // Alternar el tema cuando el usuario interactúa con el checkbox
+  themeToggle?.addEventListener("change", () => {
+    if (themeToggle?.checked) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem('theme', 'dark'); // Guardar la preferencia en localStorage
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem('theme', 'light'); // Guardar la preferencia en localStorage
+    }
+  });
+</script>

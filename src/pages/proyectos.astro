@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { proyectos } from "../data/proyecto.js";
 ---
@@ -13,11 +14,15 @@ import { proyectos } from "../data/proyecto.js";
           proyectos.map((proyecto) => (
             <div class="backdrop-blur-sm bg-base-200/60 border border-base-300 rounded-2xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between">
               <div>
-                <img
-                  src={proyecto.imagen ?? "/placeholder.jpg"}
-                  alt={proyecto.titulo ?? "Proyecto"}
-                  class="rounded-xl mb-4 w-full h-50 object-cover"
-                />
+                <div class="flex justify-center mb-4">
+                  <Image
+                    src={proyecto.imagen}
+                    alt={proyecto.titulo}
+                    width="500" height="500"
+                    class="rounded-lg w-full h-50 object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <h3 class="text-xl font-semibold mb-2">{proyecto.titulo}</h3>
                 <p class="text-sm text-base-content/80 mb-4">
                   {proyecto.descripcion}
