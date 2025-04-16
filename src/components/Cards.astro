@@ -1,10 +1,13 @@
 ---
-const { direccion,title2  } = Astro.props;
+import { Icon } from 'astro-icon/components'
+const { nombreIcono,title2} = Astro.props;
 ---
 <div class="card bg-base-100 shadow-md hover:shadow-lg transition-all duration-300 text-base-content p-6 items-center justify-center">
-    <figure class="mb-3">
-      <img src={direccion} alt={title2} class="h-12 w-12 transition-transform duration-200 hover:scale-110 filter dark:invert dark:brightness-90 ligth:brightness-0" />
-    </figure>
+    <Icon 
+        name={nombreIcono} 
+        class="h-12 w-12 transition-transform duration-200 hover:scale-110 filter dark:invert dark:brightness-90 light:brightness-100 text-black dark:text-white dark:filter-none"
+    />
     <p class="font-semibold text-center">{title2}</p>
 </div>
+
   
