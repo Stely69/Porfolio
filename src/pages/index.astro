@@ -5,14 +5,14 @@ import {Image} from 'astro:assets';
 import logo from '../assets/images/JavaScript-logo.png';
 ---
 <Layout title="Inicio">
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0d0f1b] to-[#0a0c15]">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15]">
     <!-- capa de estrellas -->
     <div class="absolute inset-0 bg-[url('/stars.svg')] bg-repeat opacity-20"></div>
   
     <div class="relative z-10 grid gap-10 lg:grid-cols-2 max-w-7xl w-full px-2">
       <!-- Texto -->
       <div class="flex flex-col justify-center text-center lg:text-left">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-base-content dark:text-white">
           HOLA, SOY<br />
           <span class="text-primary">WILLIAM VANEGAS</span>
         </h1>
