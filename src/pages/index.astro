@@ -5,42 +5,53 @@ import {Image} from 'astro:assets';
 import logo from '../assets/images/JavaScript-logo.png';
 ---
 <Layout title="Inicio">
-  <section id="hero" class="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 bg-base-100 text-base-content group">
-    <!-- Texto Izquierda -->
-    <div class="md:w-1/2 text-left pl-4 md:pl-12 lg:pl-20 mb-8 md:mb-0 flex flex-col justify-center items-start">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-        Hola, soy William Vanegas
-      </h1>
-      <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-base-content/70">
-        Desarrollador Web | Diseñador | Creador de soluciones digitales | Desarrollador de software
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/proyectos" class="btn btn-primary text-base px-6 py-3">Ver mis proyectos</a>
-        <a href="/contacto" class="btn btn-outline btn-secondary text-base px-6 py-3">Contáctame</a>
-      </div>
-    </div>
-    
-    <!-- Logo JS Derecha con movimiento solo en sección -->
-    <div class="md:w-1/2 flex justify-center items-center mt-12 md:mt-0 relative">
-      <!-- Fondo difuso detrás del logo, con mayor tamaño -->
-      <div class="absolute w-90 h-90 bg-yellow-400/20 rounded-full blur-3xl z-0"></div>
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0d0f1b] to-[#0a0c15]">
+    <!-- capa de estrellas -->
+    <div class="absolute inset-0 bg-[url('/stars.svg')] bg-repeat opacity-20"></div>
   
-      <!-- Contenedor del logo -->
-      <div 
-        id="jsLogoTilt"
-        class="rounded-xl shadow-xl overflow-hidden p-4 bg-transparent w-full max-w-[350px] md:max-w-[400px] h-full md:h-[400px] relative"
-        style="will-change: transform; perspective: 1000px;"
-      >
-        <Image 
-          src={logo} 
-          alt="JavaScript Logo"
-          width={250} 
-          height={250}
-          class="w-full h-full object-contain"
-        />
+    <div class="relative z-10 grid gap-10 lg:grid-cols-2 max-w-7xl w-full px-2">
+      <!-- Texto -->
+      <div class="flex flex-col justify-center text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+          HOLA, SOY<br />
+          <span class="text-primary">WILLIAM VANEGAS</span>
+        </h1>
+      
+        <p class="mt-4 text-base-content/70 text-sm md:text-base">
+          Desarrollador Web&nbsp;| Diseñador UI&nbsp;| Creador de soluciones digitales | Desarrollador de Software&nbsp;| Aprendiz de IA
+        </p>
+      
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
+          <a href="/proyectos" class="btn btn-primary px-8">Ver mis proyectos</a>
+          <a href="/contacto" class="btn btn-outline btn-secondary">Contáctame</a>
+        </div>
+      </div>
+    
+      <!-- Imagen JS 3‑D -->
+      <div class="flex justify-center items-center">
+        <div class="relative w-48 sm:w-60 md:w-72 lg:w-96">
+          <div 
+            id="jsLogoTilt"
+            class="rounded-xl shadow-xl overflow-hidden p-4 bg-transparent w-full h-full relative"
+            style="will-change: transform; perspective: 1000px;"
+          >
+            <Image 
+              src={logo} 
+              alt="JavaScript Logo"
+              width={256}
+              height={256} 
+              class="w-full h-auto rounded-3xl shadow-2xl rotate-3"
+            />
+          </div>
+          <!-- aro violeta detrás -->
+          <div 
+            id="jsLogoRing"
+            class="absolute inset-0 rounded-3xl rotate-3 ring-8 ring-primary -z-10"
+          ></div>
+        </div>
       </div>
     </div>
-  </section>   
+  </section>
   
   <section class="py-32 bg-base-200 text-base-content">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -87,6 +98,14 @@ import logo from '../assets/images/JavaScript-logo.png';
       section.addEventListener('mouseleave', () => {
         tilt.vanillaTilt?.disable();
       });
+    });
+    
+    const ring = document.querySelector('#jsLogoRing');
+
+    // Sync the ring's movement with the tilt effect
+    tilt.addEventListener('tiltChange', (event) => {
+      const { tiltX, tiltY } = event.detail;
+      ring.style.transform = `rotate3d(${tiltY}, ${-tiltX}, 0, 10deg)`;
     });
   </script>
 </Layout>
