@@ -1,9 +1,9 @@
 ---
 	const { title } = Astro.props;
-	import  Navbar  from "../components/Navbar.astro";
-	import Footer from "../components/Footer.astro";
+	import  Navbar  from "@components/Navbar.astro";
+	import Footer from "@components/Footer.astro";
 	import "../styles/global.css";
-	import BotonDL from "../components/BotonDL.astro";
+	import BotonDL from "@components/BotonDL.astro";
 ---
 <!doctype html>
 <html lang="es" >
@@ -17,7 +17,7 @@
 
 		<title>{title}</title>
 	</head>
-	<body class="bg-base-200 text-base-content">
+	<body class="bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15]">
 		<Navbar />
 		<BotonDL />
 		<main class="">
