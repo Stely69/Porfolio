@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Cards from '../components/Cards.astro';
+import Cards from '@components/Cards.astro';
 import {Image} from 'astro:assets';
 import logo from '../assets/images/JavaScript-logo.png';
+import { proyectos } from "@data/proyecto";
 ---
 <Layout title="Inicio">
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15]">
+  <section id="inicio" class="fade-in-on-scroll opacity-0 translate-y-10 transition-all duration-700 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15] mask-b-from-70% mask-b-to-100%">
     <!-- capa de estrellas -->
     <div class="absolute inset-0 bg-[url('/stars.svg')] bg-repeat opacity-20"></div>
   
@@ -18,12 +19,12 @@ import logo from '../assets/images/JavaScript-logo.png';
         </h1>
       
         <p class="mt-4 text-base-content/70 text-sm md:text-base">
-          Desarrollador Web&nbsp;| Diseñador UI&nbsp;| Creador de soluciones digitales | Desarrollador de Software&nbsp;| Aprendiz de IA
+          Desarrollador de Software&nbsp;| Creador de soluciones digitales | Aprendiz de IA
         </p>
       
         <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
-          <a href="/proyectos" class="btn btn-primary px-8">Ver mis proyectos</a>
-          <a href="/contacto" class="btn btn-outline btn-secondary">Contáctame</a>
+          <a href="#proyectos" class="btn btn-primary px-8 rounded-full">Ver mis proyectos</a>
+          <a href="#contacto" class="btn btn-outline hover:btn-primary btn-s rounded-full">Contáctame</a>
         </div>
       </div>
     
@@ -52,8 +53,45 @@ import logo from '../assets/images/JavaScript-logo.png';
       </div>
     </div>
   </section>
+
+  <section id="about" class="fade-in-on-scroll opacity-0 translate-y-10 transition-all duration-700 py-10 lg:py-56  px-4 bg-base-300 text-base-content min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15] mask-b-from-70% mask-b-to-100% mask-t-from-70% mask-t-to-100% ">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+      
+      <!-- Imagen (opcional) -->
+      <div class="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
+        <div class="avatar avatar-placeholder avatar-online">
+          <div class="bg-neutral text-neutral-content w-32 h-32 md:w-50 md:h-50 rounded-full flex items-center justify-center">
+            <span class="text-2xl md:text-3xl">W</span>
+          </div>
+        </div>
+      </div>
   
-  <section class="py-32 bg-base-200 text-base-content">
+      <!-- Texto -->
+      <div class="w-full md:w-2/3 text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Sobre mí</h2>
+        <p class="text-base md:text-lg mb-4">
+          Soy <span class="font-semibold text-primary">William Steven Vanegas Gomez</span>, un desarrollador web enfocado en crear interfaces limpias, funcionales y bien estructuradas. Me apasiona la tecnología y siempre estoy aprendiendo cosas nuevas.
+        </p>
+        <p class="text-sm md:text-base text-opacity-80 mb-6">
+          Disfruto trabajar tanto en el frontend como en el backend, buscando siempre ofrecer una experiencia completa al usuario final.
+        </p>
+  
+        <!-- Habilidades blandas o técnicas destacadas -->
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm md:text-base mb-8 justify-items-center md:justify-items-start">
+          <li class="badge badge-outline py-6 px-3 md:py-5 md:px-4 text-sm md:text-base">Comunicación</li>
+          <li class="badge badge-outline py-6 px-3 md:py-5 md:px-4 text-sm md:text-base">Trabajo en equipo</li>
+          <li class="badge badge-outline py-6 px-3 md:py-5 md:px-4 text-sm md:text-base">JavaScript</li>
+          <li class="badge badge-outline py-6 px-3 md:py-5 md:px-4 text-sm md:text-base">Astro</li>
+          <li class="badge badge-outline py-6 px-3 md:py-5 md:px-4 text-sm md:text-base">TailwindCSS</li>
+        </ul>
+  
+        <!-- Botón de descarga de CV -->
+        <a class="btn btn-outline btn-primary" href="" target="_blank">Descargar CV</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="fade-in-on-scroll opacity-0 translate-y-10 transition-all duration-700 py-32 bg-base-200 text-base-content min-h-screen bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15] mask-b-from-60% mask-b-to-100% mask-t-from-90% mask-t-to-100%">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-10">Lo que sé hacer</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -68,21 +106,134 @@ import logo from '../assets/images/JavaScript-logo.png';
       </div>
     </div>
   </section>
-  
-  <section class="bg-primary text-primary-content text-center py-24 glass">
-    <h2 class="text-3xl font-semibold mb-4">Trabajemos juntos.</h2>
-    <p class="mb-6 text-primary-content/80">
-      Estoy abierto a nuevos proyectos o colaboraciones. ¿Tienes algo en mente?
-    </p>
-    <a class="btn btn-primary" href="/contacto">Contáctame</a>
+
+  <section id="proyectos" class="fade-in-on-scroll opacity-0 translate-y-10 transition-all duration-700 py-16 px-4 bg-base-300 text-base-content min-h-screen bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15] mask-b-from-70% mask-b-to-100% mask-t-from-90% mask-t-to-100%">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 text-center">Proyectos</h2>
+
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          proyectos.map((proyecto) => (
+            <div class="backdrop-blur-sm bg-base-200/60 border border-base-300 rounded-2xl p-5 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-center mb-4">
+                  <Image
+                    src={proyecto.imagen}
+                    alt={proyecto.titulo}
+                    width="500" height="500"
+                    class="rounded-lg w-full h-50 object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="text-xl font-semibold mb-2">{proyecto.titulo}</h3>
+                <p class="text-sm text-base-content/80 mb-4">
+                  {proyecto.descripcion}
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {Array.isArray(proyecto.tecnologias) &&
+                    proyecto.tecnologias.map((tec) => (
+                      <span class="badge badge-sm badge-outline" >
+                        {tec}
+                      </span>
+                    ))}
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-auto pt-4 border-t border-base-300">
+                <a
+                  href={proyecto.demo}
+                  class="text-primary hover:underline text-sm font-medium"
+                  target="_blank"
+                >
+                  🌐 Ver demo
+                </a>
+                <a
+                  href={proyecto.codigo}
+                  class="text-sm hover:underline text-base-content/70"
+                  target="_blank"
+                >
+                  🧠 Ver código
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="fade-in-on-scroll opacity-0 translate-y-10 transition-all duration-700 flex flex-col justify-center items-center bg-base-200 px-4 py-10 min-h-screen bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15] mask-b-from-70% mask-b-to-100% mask-t-from-80% mask-t-to-100%"
+    id="contacto"
+  >
+    <div class="bg-base-100 shadow-lg rounded-lg w-full max-w-3xl py-10 p-8 space-y-6 text-center">
+      <h2 class="text-3xl font-bold text-base-content">¡Ponte en contacto!</h2>
+      <p class="text-base text-base-content/70">
+        Estoy disponible para colaborar en nuevos proyectos o simplemente
+        charlar sobre ideas creativas. Escríbeme un mensaje o sígueme en redes
+        sociales.
+      </p>
+
+      <!-- Información de contacto -->
+      <div class="space-y-6 text-base-content">
+        <p>
+          <span class="font-semibold">Correo: </span>
+          <a
+            href="mailto:williamsteven237gg@gmail.com"
+            class="link link-hover text-primary"
+            target="_blank"
+          >
+          williamsteven237gg@gmail.com 
+        </a>
+        </p>
+        <p>
+          <span class="font-semibold">WhatsApp:</span>
+          <a
+            href="https://wa.me/573203342904"
+            class="link link-hover text-primary"
+            target="_blank"
+          >
+            +57 3203342904</a
+          >
+        </p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex justify-center  gap-4">
+        <a
+          href="https://www.linkedin.com/in/william-steven-vanegas-gomez-89a81a299/"
+          target="_blank"
+          class="btn btn-circle btn-outline "
+        >
+          <i  class="fa-brands fa-linkedin" />
+        </a>
+        <a
+          href="https://github.com/Stely69"
+          target="_blank"
+          class="btn btn-circle btn-outline"
+        >
+          <i class="fa-brands fa-github" />
+        </a>
+        <a
+          href="https://x.com/stely_69"
+          target="_blank"
+          class="btn btn-circle btn-outline"
+        >
+          <i class="fa-brands fa-x" />
+        </a>
+      </div>
+    </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
   <script is:inline>
     window.addEventListener('DOMContentLoaded', () => {
-      const section = document.querySelector('#hero');
       const tilt = document.querySelector('#jsLogoTilt');
-
+      const ring = document.querySelector('#jsLogoRing');
+      const section = document.querySelector('#hero');
+      if (!tilt || !VanillaTilt) return;
+      // Inicia VanillaTilt
       VanillaTilt.init(tilt, {
         max: 25,
         speed: 400,
@@ -90,22 +241,34 @@ import logo from '../assets/images/JavaScript-logo.png';
         "max-glare": 0.2,
         reverse: true,
       });
-
-      section.addEventListener('mouseenter', () => {
+      // Control de activar/desactivar
+      section?.addEventListener('mouseenter', () => {
         tilt.vanillaTilt?.enable();
       });
-
-      section.addEventListener('mouseleave', () => {
+      section?.addEventListener('mouseleave', () => {
         tilt.vanillaTilt?.disable();
       });
+      // Movimiento del anillo
+      tilt.addEventListener('tiltChange', (event) => {
+        if (!ring) return;
+        const { tiltX, tiltY } = event.detail;
+        ring.style.transform = `rotate3d(${tiltY}, ${-tiltX}, 0, 10deg)`;
+      });
     });
-    
-    const ring = document.querySelector('#jsLogoRing');
 
-    // Sync the ring's movement with the tilt effect
-    tilt.addEventListener('tiltChange', (event) => {
-      const { tiltX, tiltY } = event.detail;
-      ring.style.transform = `rotate3d(${tiltY}, ${-tiltX}, 0, 10deg)`;
+    window.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(entry.target); // para que solo se anime una vez
+          }
+        });
+      }, { threshold: 0.2 });
+
+      const sections = document.querySelectorAll('.fade-in-on-scroll');
+      sections.forEach(section => observer.observe(section));
     });
-  </script>
+  </script>  
 </Layout>
