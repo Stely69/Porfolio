@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.6",
-    "astro": "^5.7.12",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.8.0",
     "astro-icon": "^1.1.5",
-    "daisyui": "^5.0.35"
+    "daisyui": "^5.0.37"
   },
   "devDependencies": {
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.7"
   }
 }
