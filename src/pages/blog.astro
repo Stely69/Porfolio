@@ -1,9 +1,67 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Icon } from 'astro-icon/components';
+
+const news = [
+    {
+        title: "OpenAI Introduces GPT-4 Turbo",
+        description: "La última versión del modelo de lenguaje más avanzado de OpenAI ofrece mejoras significativas en velocidad y precisión.",
+        date: "2024-01-15",
+        category: "IA",
+        link: "https://openai.com"
+    },
+    {
+        title: "Apple Vision Pro Llegará en 2024",
+        description: "El nuevo dispositivo de realidad mixta de Apple promete revolucionar la forma en que interactuamos con la tecnología.",
+        date: "2024-01-10",
+        category: "Hardware",
+        link: "https://www.apple.com"
+    },
+    {
+        title: "Meta Anuncia Nuevas Características para Instagram",
+        description: "Instagram implementará nuevas funciones de IA para mejorar la experiencia de creación de contenido.",
+        date: "2024-01-08",
+        category: "Social Media",
+        link: "https://about.instagram.com"
+    },
+    {
+        title: "Microsoft Integra Copilot en Windows 11",
+        description: "La nueva actualización de Windows 11 incluirá Copilot integrado en el sistema operativo.",
+        date: "2024-01-05",
+        category: "Software",
+        link: "https://microsoft.com"
+    }
+];
 ---
 
-<Layout title="Blog">
-    <section>
-        <p>Proximamente</p>
+<Layout title="Blog - Noticias de Tecnología">
+    <section class="py-16 px-4 min-h-screen bg-gradient-to-br from-base-100 to-base-200 dark:from-[#0d0f1b] dark:to-[#0a0c15]">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-12">Noticias de Tecnología</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {news.map(item => (
+                    <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        <div class="card-body">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="badge badge-primary">{item.category}</span>
+                                <time class="text-sm text-base-content/60">{item.date}</time>
+                            </div>
+                            <h2 class="card-title mb-3">{item.title}</h2>
+                            <p class="text-base-content/70 mb-4">{item.description}</p>
+                            <div class="card-actions justify-end">
+                                <a href={item.link} 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="btn btn-primary btn-sm">
+                                    Leer más
+                                    <Icon name="mdi:arrow-right" class="w-4 h-4" />
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
     </section>
 </Layout>
