@@ -1,13 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components'; 
 ---
-<nav class="navbar shadow-md sticky top-0 z-50 backdrop-blur-md mask-b-from-80% mask-b-to-100% ">
+<nav class="navbar shadow-md sticky top-0 z-50 backdrop-blur-md mask-b-from-80% mask-b-to-100%">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <!-- Logo / Nombre -->
     <a href="/" class="text-xl font-bold text-primary hover:text-primary-focus transition dark:text-primary">
       MiPortafolio
     </a>
-    <!-- Menú de navegación -->
+    
+    <!-- Menú de navegación desktop -->
     <div class="hidden md:flex gap-4">
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-bg-base-200/50 rounded-full" href="/">Inicio</a>
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="#about">Sobre mí</a>
@@ -15,20 +16,21 @@ import { Icon } from 'astro-icon/components';
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="#contacto">Contacto</a>
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="/blog">Blog</a>
     </div>
-    <!-- Botón mobile -->
-    <div class="dropdown dropdown-end md:hidden">
-      <button tabindex="0" class="btn btn-ghost btn-square">
-        <Icon name="mdi:format-list-bulleted" class="h-6 w-6 text-base-content dark:text-base-content" />
-      </button>
-      <ul tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-base-200 rounded-box w-52">
-        <li><a href="/" class="dark:text-base-content">Inicio</a></li>
-        <li><a href="#about" class="dark:text-base-content">Sobre mí</a></li>
-        <li><a href="#proyectos" class="dark:text-base-content">Proyectos</a></li>
-        <li><a href="#contacto" class="dark:text-base-content">Contacto</a></li>
-        <li><a href="/blog" class="dark:text-base-content">Blog</a></li>
-      </ul>
+
+    <!-- Menú mobile -->
+    <div class="md:hidden">
+      <details class="dropdown dropdown-end">
+        <summary class="btn btn-ghost btn-circle">
+          <Icon name="mdi:menu" class="h-6 w-6 text-base-content dark:text-base-content" />
+        </summary>
+        <ul class="menu dropdown-content z-[1] p-2 shadow-lg bg-base-100 dark:bg-base-200 rounded-box w-52 mt-4">
+          <li><a href="/" class="dark:text-base-content">Inicio</a></li>
+          <li><a href="#about" class="dark:text-base-content">Sobre mí</a></li>
+          <li><a href="#proyectos" class="dark:text-base-content">Proyectos</a></li>
+          <li><a href="#contacto" class="dark:text-base-content">Contacto</a></li>
+          <li><a href="/blog" class="dark:text-base-content">Blog</a></li>
+        </ul>
+      </details>
     </div>
   </div>
 </nav>
-
