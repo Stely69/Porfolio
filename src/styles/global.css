@@ -1,8 +1,46 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-    themes: light --default, dark --prefersdark;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-    --btn-s: #434855;
+  --primary: #7c3aed;
+  --primary-focus: #6d28d9;
+  --primary-content: #ffffff;
+  
+  --secondary: #f59e0b;
+  --secondary-focus: #d97706;
+  --secondary-content: #ffffff;
+  
+  --accent: #10b981;
+  --accent-focus: #059669;
+  --accent-content: #ffffff;
+  
+  --base-100: #ffffff;
+  --base-200: #f3f4f6;
+  --base-300: #e5e7eb;
+  --base-content: #1f2937;
+}
+
+[data-theme="dark"] {
+  --primary: #8b5cf6;
+  --primary-focus: #7c3aed;
+  --primary-content: #ffffff;
+  
+  --secondary: #fbbf24;
+  --secondary-focus: #f59e0b;
+  --secondary-content: #ffffff;
+  
+  --accent: #34d399;
+  --accent-focus: #10b981;
+  --accent-content: #ffffff;
+  
+  --base-100: #1f2937;
+  --base-200: #111827;
+  --base-300: #0f172a;
+  --base-content: #f3f4f6;
+}
+
+.btn-s {
+  background-color: var(--btn-s);
+  color: white;
 }
