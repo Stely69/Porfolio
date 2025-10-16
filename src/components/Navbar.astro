@@ -1,8 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components'; 
 ---
-<nav class="navbar shadow-md sticky top-0 z-50 backdrop-blur-md mask-b-from-80% mask-b-to-100%">
-  <div class="container mx-auto px-4 flex justify-between items-center">
+
+<nav
+  id="navbar"
+  class="navbar shadow-md sticky top-3 z-50 backdrop-blur-md mask-b-from-80% mask-b-to-100% transition-all duration-300 mx-auto rounded-lg px-50"
+>
+  <div class="container mx-auto max-w-5xl px-4 flex justify-between items-center">
     <!-- Logo / Nombre -->
     <a href="/" class="text-xl font-bold text-primary hover:text-primary-focus transition dark:text-primary">
       MiPortafolio
@@ -10,7 +14,7 @@ import { Icon } from 'astro-icon/components';
     
     <!-- Menú de navegación desktop -->
     <div class="hidden md:flex gap-4">
-      <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-bg-base-200/50 rounded-full" href="/">Inicio</a>
+      <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="/">Inicio</a>
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="#about">Sobre mí</a>
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="#proyectos">Proyectos</a>
       <a class="btn btn-ghost text-base font-semibold text-base-content hover:bg-base-200/50 dark:hover:bg-base-300/50 rounded-full" href="#contacto">Contacto</a>
@@ -34,3 +38,31 @@ import { Icon } from 'astro-icon/components';
     </div>
   </div>
 </nav>
+
+<script>
+  // Efecto de scroll: la navbar se “encoge” y baja ligeramente
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+    if (window.scrollY > 30) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<style>
+  #navbar {
+    transform: translateY(0);
+  }
+
+  #navbar.scrolled {
+    transform: translateY(6px); /* baja un poquito */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: transparent; /* opcional: un poco más sólido */
+    backdrop-filter: blur(12px);
+    max-width: 56rem;
+  }
+</style>
