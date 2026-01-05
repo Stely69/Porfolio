@@ -1,7 +1,6 @@
 import GEDAC from "@/assets/images/GEDAC.png";
 import Distribuidora from "@/assets/images/Distribuidora.png";
 
-
 export const proyectos = [
   {
     titulo: " Sistema de Gestión de Activos",
@@ -18,4 +17,11 @@ export const proyectos = [
     tecnologias: ["React", "Hono", "TailwindCSS", "TypeScript", "SQLite"],
     demo: "https://damigofeng.dogalyir.workers.dev",
   },
+  {
+    titulo: "Bot de Telegram",
+    descripcion: "Un bot de Telegram para notificar videojuegos gratis.",
+    imagen: Distribuidora,
+    tecnologias: ["typescript", "API"],
+    demo: "https://t.me/gamerpowerdogalyir",
+  }
 ];
