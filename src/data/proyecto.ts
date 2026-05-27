@@ -1,5 +1,6 @@
 import GEDAC from "@/assets/images/GEDAC.png";
 import Distribuidora from "@/assets/images/Distribuidora.png";
+import BotGames from "@/assets/images/GamerPower.jpg";
 
 export const proyectos = [
   {
@@ -20,8 +21,15 @@ export const proyectos = [
   {
     titulo: "Bot de Telegram",
     descripcion: "Un bot de Telegram para notificar videojuegos gratis.",
-    imagen: Distribuidora,
+    imagen: BotGames,
     tecnologias: ["typescript", "API"],
     demo: "https://t.me/gamerpowerdogalyir",
+  },
+  {
+    titulo: "Bot de Telegram",
+    descripcion: "Un bot de Telegram para llevar un control de horas laborales.",
+    imagen: Distribuidora,
+    tecnologias: ["typescript", "API"],
+    demo: "https://t.me/Work_times24_bot",
   }
 ];
