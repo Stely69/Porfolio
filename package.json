@@ -9,16 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/tailwind": "^5.1.5",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/simple-icons": "^1.2.65",
-    "astro": "^5.16.6",
+    "@iconify-json/simple-icons": "^1.2.84",
+    "astro": "^5.18.2",
     "astro-icon": "^1.1.5",
     "daisyui": "^4.12.24"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19",
-    "wrangler": "^4.54.0"
+    "wrangler": "^4.95.0"
   }
 }
